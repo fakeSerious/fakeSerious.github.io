@@ -7,5 +7,5 @@ author:     假正经
 header-img: img/banner_janusgraph.png
 catalog: true
 tags:
-    - janusgraph
+    - JanusGraph
 ---
