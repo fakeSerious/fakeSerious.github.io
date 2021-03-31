@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      JanusGraph使用心得-踩坑合集
-subtitle:   从事图数据开发,入坑已经一年多,在众多图数据库技术中,JanusGraph开源又免费的身份,使得有不少开发者青睐,但总体上讲,依旧有不少缺点;**本篇文章会陆续更新下去**
+subtitle:   
 date:       2021-03-12
 author:     假正经
 header-img: img/banner_janusgraph.png
@@ -12,7 +12,9 @@ tags:
     - ElasticSearch
 ---
 
-#踩坑合集
+从事图数据开发,入坑已经一年多,在众多图数据库技术中,JanusGraph开源又免费的身份,使得有不少开发者青睐,但总体上讲,依旧有不少缺点;本篇文章会陆续更新下去
+
+# 踩坑合集
 
 - JanusGraph与Hbase,ES版本存在兼容问题，具体情况可浏览官网文档给的Version Compatibility
     ```
