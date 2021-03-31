@@ -1,13 +1,13 @@
 ---
 layout:     post
-title:      JanusGraph使用心得-数据操作
+title:      JanusGraph使用心得-数据操作 (持续更新中)
 subtitle:   
 date:       2021-03-08
 author:     假正经
 header-img: img/banner_janusgraph.png
 catalog: true
 tags:
-    - janusgraph
+    - JanusGraph
     - Gremlin
     - Apache Groovy Programming Language
 ---
@@ -84,7 +84,7 @@ Gremlin 命令执行schema创建:
     > defineGratefulDeadSchema(t)
     > t.close()
 ```
-> **注**: 属性<**bulkLoader.vertex.id**>必须创建,不然在导入新Vertex时会报错
+> <font color=#fd6262 >**注**: 属性<**bulkLoader.vertex.id**>必须创建,不然在导入新Vertex时会报错</font>
 
 ---
 ## JanusGraph Vertex
