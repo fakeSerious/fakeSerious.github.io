@@ -12,9 +12,7 @@ tags:
     - ElasticSearch
 ---
 
-从事图数据开发,入坑已经一年多
-
-在众多图数据库技术中,JanusGraph开源又免费的身份,使得有不少开发者青睐,但总体上讲,依旧有不少缺点
+从事图数据开发,入坑已经一年多,在众多图数据库技术中,JanusGraph开源又免费的身份,使得有不少开发者青睐,但总体上讲,依旧有不少缺点
 
 本篇文章会陆续更新下去
 
@@ -60,7 +58,7 @@ tags:
 
 - 浏览过早期涉及JanusGraph的技术博客，发现其中会有一些问题
 
-  1. 出现配置名称有误，可能是早期版本使用的配置名称，但建议修改配置时直接浏览JanusGraph官网 **[[JanusGraph Configuration Reference]]**(https://docs.janusgraph.org/basics/configuration-reference/)
+  1. 出现配置名称有误，可能是早期版本使用的配置名称，但建议修改配置时直接浏览JanusGraph官网 [[**JanusGraph Configuration Reference**]](https://docs.janusgraph.org/basics/configuration-reference/)
   
 
 - JanusGraph Client开发所依赖jar包，官网似乎给的不全，这里罗列基于Spark读写JanusGraph所需要的jar包
@@ -103,5 +101,5 @@ tags:
     ```
   - 若客户端使用jar包版本与部署服务版本不一致，将会获取不到数据
 
-
+---
 > [**JanusGraph Verson Compatibility**](https://docs.janusgraph.org/changelog/)
