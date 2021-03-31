@@ -84,7 +84,7 @@ Gremlin 命令执行schema创建:
     > defineGratefulDeadSchema(t)
     > t.close()
 ```
-> <font color=#fd6262 >**注**: 属性<**bulkLoader.vertex.id**>必须创建,不然在导入新Vertex时会报错</font>
+> **注**: 属性<**bulkLoader.vertex.id**>必须创建,不然在导入新Vertex时会报错
 
 ---
 ## JanusGraph Vertex
