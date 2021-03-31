@@ -85,6 +85,7 @@ Gremlin 命令执行schema创建:
     > t.close()
 ```
 > **注**: 属性<**bulkLoader.vertex.id**>必须创建,不然在导入新Vertex时会报错
+
 ---
 ## JanusGraph Vertex
 
@@ -145,6 +146,7 @@ def parse(line) {
 ```
 
 ## JanusGraph源码数据案列分析
+
 
 ---
 >[JanusGraph官网](https://docs.janusgraph.org/) | [TinkerPop Documentation](https://tinkerpop.apache.org/docs/3.4.6/reference/#order-step) | [Gremlin Practical doc](https://kelvinlawrence.net/book/Gremlin-Graph-Guide.html#exedge)
