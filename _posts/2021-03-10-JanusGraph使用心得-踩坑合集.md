@@ -12,7 +12,11 @@ tags:
     - ElasticSearch
 ---
 
-从事图数据开发,入坑已经一年多,在众多图数据库技术中,JanusGraph开源又免费的身份,使得有不少开发者青睐,但总体上讲,依旧有不少缺点;本篇文章会陆续更新下去
+从事图数据开发,入坑已经一年多
+
+在众多图数据库技术中,JanusGraph开源又免费的身份,使得有不少开发者青睐,但总体上讲,依旧有不少缺点
+
+本篇文章会陆续更新下去
 
 # 踩坑合集
 
@@ -21,10 +25,12 @@ tags:
     目前生产环境使用版本如下:
         JanusGraph: 0.3.3    Apache Hbase: 1.3.6    ElasticSearch: 6.6.0
     ```
-- 因机器部署的Spark环境中 jars目录使用的guava版本过低，导致客户端无法进行数据读写`spark-2.1.1版本中使用的guava版本是guava-14.0.1.jar`
+- 因机器部署的Spark环境中 jars目录使用的guava版本过低，导致客户端无法进行数据读写   
+  `spark-2.1.1版本中使用的guava版本是guava-14.0.1.jar`
   
 
-- JanusGraph 0.3.3安装包中的配置文件janusgraph-hbase-es.properties无法使用，原因是少了一个固定配置`gremlin.graph=org.janusgraph.core.JanusGraphFactory`
+- JanusGraph 0.3.3安装包中的配置文件janusgraph-hbase-es.properties无法使用，原因是少了一个固定配置   
+  `gremlin.graph=org.janusgraph.core.JanusGraphFactory`
   
 
 - 客户端进行数据操作时，因事务未正常提交，导致操作无效
@@ -35,7 +41,8 @@ tags:
 
 - 索引创建后，状态异常，未生效  
   ![graph index life cycle](/img/graph_inde_life_cycle.png)
-- 服务配置中，未更新ES的相关配置，导致服务启动后按默认副本数及分片数创建索引`配置默认分片数为5，副本数为2`
+- 服务配置中，未更新ES的相关配置，导致服务启动后按默认副本数及分片数创建索引    
+  `配置默认分片数为5，副本数为2`
   
 
 - Hbase Region因end_key为空，导致JanusGraph在读取配置数据时抛出异常
@@ -53,7 +60,7 @@ tags:
 
 - 浏览过早期涉及JanusGraph的技术博客，发现其中会有一些问题
 
-  1. 出现配置名称有误，可能是早期版本使用的配置名称，但建议修改配置时直接浏览JanusGraph官网 [[**JanusGraph Configuration Reference**]](https://docs.janusgraph.org/basics/configuration-reference/)
+  1. 出现配置名称有误，可能是早期版本使用的配置名称，但建议修改配置时直接浏览JanusGraph官网 **[[JanusGraph Configuration Reference]]**(https://docs.janusgraph.org/basics/configuration-reference/)
   
 
 - JanusGraph Client开发所依赖jar包，官网似乎给的不全，这里罗列基于Spark读写JanusGraph所需要的jar包
