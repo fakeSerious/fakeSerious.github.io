@@ -88,7 +88,8 @@ Gremlin 命令执行schema创建:
 > **注意:** 属性<**bulkLoader.vertex.id**>必须创建,不然在导入新Vertex时会报错
 
 ---
-## JanusGraph Vertex
+
+### JanusGraph Vertex
 
 ```shell
 i.新增节点
@@ -104,7 +105,8 @@ iiii.删除节点
 > **注意:** 当删除节点时,若未加上iterator()方法,从不会自动遍历遍历的意义上讲,该步骤不会终止;因此,必须进行某种形式的迭代才能真正进行删除,建议参照上面的代码案例进行开发操作
 
 ---
-## JanusGraph Edge
+
+### JanusGraph Edge
 
 ```shell
 i.新增edge
@@ -148,7 +150,7 @@ def parse(line) {
 }
 ```
 
-## JanusGraph源码数据案列分析
+### JanusGraph源码数据案列分析
 
 目前JanusGraph支持Input/Output Formats有Gryo,GraphSON,Script
 **[Input/Output Formats doc](https://tinkerpop.apache.org/docs/3.4.6/reference/#_input_output_formats)**
@@ -162,7 +164,7 @@ def parse(line) {
 在工作中,为实现图数据快速导入的要求下,利用JanusGraph源生**bulk load**方案也是不错的选择    
 由于Gryo Format的数据无法直观分析,下面主要介绍GraphSON Format 和Script Format
 
-### GraphSON Format
+##### GraphSON Format
 ```
 数据示例:
 --------------------------------------------------------------------
@@ -190,7 +192,7 @@ def parse(line) {
 > **注意:** 在JanusGraph中,property属性也是类似节点的存在,同样也有id,由于Vertex ID唯一;
 所以在考虑使用GraphSON Format 批量导入数据时,应着重考虑id分配的问题,不过笔者建议,不要轻易使用该Format方式,容易出问题
 
-### Script Format
+##### Script Format
 ```
 数据示例:
 --------------------------------------------------------------------
@@ -224,7 +226,7 @@ def parse(line) {
     return v1
 }
 --------------------------------------------------------------------
-示例数据以及执行脚本开发思路都很清洗,就不再过多赘述,实际开发可以根据业务进行调整
+示例数据以及执行脚本开发思路都很清洗,这里就不再过多赘述,实际开发可以根据业务进行调整
 ```
 > **注意:** 在使用addOutEdge()/addInEdge方法创建edge时,尽量梳理清两个Vertex间Edge的direction,
 建议使用单方向的Direction,避免读写数据时造成逻辑混乱
