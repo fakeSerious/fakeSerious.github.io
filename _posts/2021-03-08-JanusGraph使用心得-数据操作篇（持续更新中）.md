@@ -237,7 +237,7 @@ def parse(line) {
 ```
 示例:
 --------------------------------------------------------------------
---> $JANUSGRAPH_HOME/bin/gremlin.sh
+> $JANUSGRAPH_HOME/bin/gremlin.sh
 > outputGraphConfig='conf/janusgraph-xxx.properties'
 > readGraph = GraphFactory.open('conf/hadoop-graph/hadoop-xxx.properties')
 > blvp = BulkLoaderVertexProgram.build().writeGraph(outputGraphConfig).create(readGraph)
