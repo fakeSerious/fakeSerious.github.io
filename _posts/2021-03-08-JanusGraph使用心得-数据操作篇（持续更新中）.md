@@ -164,6 +164,8 @@ def parse(line) {
 
 ### GraphSON Format
 ```
+数据示例:
+--------------------------------------------------------------------
 {
   "id": 1,
   "label": "person",
@@ -182,12 +184,25 @@ def parse(line) {
     "age": [ { "id": 1, "value": 29 } ]
   }
 }
+--------------------------------------------------------------------
 根据上面示例的结构,可以直观的分析出,像这样的一条JSON,即包含了Vertex节点数据[id, label, properties],又带上了其相关联Edge数据
 ```
 > **注意:** 在JanusGraph中,property属性也是类似节点的存在,同样也有id,由于Vertex ID唯一
 所以在考虑使用GraphSON Format 批量导入数据时,应着重考虑id分配的问题,不过笔者建议不要轻易使用该Format方式,容易出问题
 
 ### Script Format
+```
+数据示例:
+--------------------------------------------------------------------
+1:person:marko:29 knows:2:0.5,knows:4:1.0,created:3:0.4
+2:person:vadas:27
+3:project:lop:java
+4:person:josh:32 created:3:0.4,created:5:1.0
+5:project:ripple:java
+6:person:peter:35 created:3:0.2  
+--------------------------------------------------------------------
+  
+```
 
 ---
 > [JanusGraph官网](https://docs.janusgraph.org/) | [TinkerPop Documentation](https://tinkerpop.apache.org/docs/3.4.6/reference/#order-step) | [Gremlin Practical doc](https://kelvinlawrence.net/book/Gremlin-Graph-Guide.html#exedge)
