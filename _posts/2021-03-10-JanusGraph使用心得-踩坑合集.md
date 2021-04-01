@@ -102,4 +102,4 @@ tags:
   - 若客户端使用jar包版本与部署服务版本不一致，将会获取不到数据
 
 ---
-> [**JanusGraph Verson Compatibility**](https://docs.janusgraph.org/changelog/) |
+> [**JanusGraph Verson Compatibility**](https://docs.janusgraph.org/changelog/)
