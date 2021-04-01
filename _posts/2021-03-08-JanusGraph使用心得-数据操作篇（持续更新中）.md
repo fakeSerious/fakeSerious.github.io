@@ -187,8 +187,8 @@ def parse(line) {
 --------------------------------------------------------------------
 根据上面示例的结构,可以直观的分析出,像这样的一条JSON,即包含了Vertex节点数据[id, label, properties],又带上了其相关联Edge数据
 ```
-> **注意:** 在JanusGraph中,property属性也是类似节点的存在,同样也有id,由于Vertex ID唯一
-所以在考虑使用GraphSON Format 批量导入数据时,应着重考虑id分配的问题,不过笔者建议不要轻易使用该Format方式,容易出问题
+> **注意:** 在JanusGraph中,property属性也是类似节点的存在,同样也有id,由于Vertex ID唯一;
+所以在考虑使用GraphSON Format 批量导入数据时,应着重考虑id分配的问题,不过笔者建议,不要轻易使用该Format方式,容易出问题
 
 ### Script Format
 ```
@@ -201,8 +201,36 @@ def parse(line) {
 5:project:ripple:java
 6:person:peter:35 created:3:0.2  
 --------------------------------------------------------------------
-  
+
+Groovy脚本实例:
+def parse(line) {
+    def parts = line.split(/ /)
+    def (id, label, name, x) = parts[0].split(/:/).toList()
+    def v1 = graph.addVertex(T.id, id, T.label, label)
+    if (name != null) v1.property('name', name) // first value is always the name
+    if (x != null) {
+        // second value depends on the vertex label; it's either
+        // the age of a person or the language of a project
+        if (label.equals('project')) v1.property('lang', x)
+        else v1.property('age', Integer.valueOf(x))
+    }
+    if (parts.length == 2) {
+        parts[1].split(/,/).grep { !it.isEmpty() }.each {
+            def (eLabel, refId, weight) = it.split(/:/).toList()
+            def v2 = graph.addVertex(T.id, refId)
+            v1.addOutEdge(eLabel, v2, 'weight', Double.valueOf(weight))
+        }
+    }
+    return v1
+}
+--------------------------------------------------------------------
+示例数据以及执行脚本开发思路都很清洗,就不再过多赘述,实际开发可以根据业务进行调整
 ```
+> **注意:** 在使用addOutEdge()/addInEdge方法创建edge时,尽量梳理清两个Vertex间Edge的direction,
+建议使用单方向的Direction,避免读写数据时造成逻辑混乱
+
+### JanusGraph Input/Output Formats使用教程
+
 
 ---
 > [JanusGraph官网](https://docs.janusgraph.org/) | [TinkerPop Documentation](https://tinkerpop.apache.org/docs/3.4.6/reference/#order-step) | [Gremlin Practical doc](https://kelvinlawrence.net/book/Gremlin-Graph-Guide.html#exedge)
