@@ -99,7 +99,7 @@ iii.更新节点
 iiii.删除节点
     g.V(v1).drop().iterator()
 ```
-> **注**:当删除节点时,若未加上iterator()方法,从不会自动遍历遍历的意义上讲，该步骤不是终止
+> **注**: 当删除节点时,若未加上iterator()方法,从不会自动遍历遍历的意义上讲，该步骤不是终止
          因此，必须进行某种形式的迭代才能真正进行删除，建议参照上面的代码案例进行开发操作
 
 ---
@@ -148,6 +148,17 @@ def parse(line) {
 ```
 
 ## JanusGraph源码数据案列分析
+目前JanusGraph支持Input/Output Formats有Gryo,GraphSON,Script 
+**[Input/Output Formats doc](https://tinkerpop.apache.org/docs/3.4.6/reference/#_input_output_formats)**
+```
+以下是不同Format的数据类型:
+    Gryo Format:        经过Kyro序列化后的数据
+    GraphSON Format:    JSON
+    Script Format:      txt文本
+```
+在工作中,为实现图数据快速导入的要求下,利用JanusGraph源生**bulk load**方案也是不错的选择    
+由于Gryo Format的数据无法直观分析,下面主要介绍GraphSON Format 和Script Format
+
 
 
 ---
