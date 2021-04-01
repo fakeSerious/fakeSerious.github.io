@@ -247,7 +247,7 @@ def parse(line) {
 
 ---
 
-除上述bulk load方式外,通过Apache Spark分布式处理,效率上也还行,
+除上述bulk load方式外,通过<font color="#FF6651">**Apache Spark**</font>分布式处理,效率上也还行,
 虽然数据导入实际是通过JanusGraph连接Apache Hbase Client方式,若数据量没有达到几十亿个Vertex情况下,该方案暂时可行;
 叙述到这,了解Hbase的小伙伴一定好奇为什么没用生成Hfile形式进行导入,而且这种方式更高效,
 这里先卖个关子,详细情况可去阅读 **[Hbase存储篇](./2021-03-06-JanusGraph使用心得-Hbase存储篇.md)**
