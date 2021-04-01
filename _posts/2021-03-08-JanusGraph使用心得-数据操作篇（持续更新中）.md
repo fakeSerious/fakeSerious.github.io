@@ -231,8 +231,17 @@ def parse(line) {
 > **注意:** 在使用addOutEdge()/addInEdge方法创建edge时,尽量梳理清两个Vertex间Edge的direction,
 建议使用单方向的Direction,避免读写数据时造成逻辑混乱
 
-### JanusGraph Input/Output Formats使用教程
-
+### JanusGraph Input/Output Formats使用方法
+```
+示例:
+--------------------------------------------------------------------
+--> $JANUSGRAPH_HOME/bin/gremlin.sh
+> outputGraphConfig='conf/janusgraph-xxx.properties'
+> readGraph = GraphFactory.open('conf/hadoop-graph/hadoop-xxx.properties')
+> blvp = BulkLoaderVertexProgram.build().writeGraph(outputGraphConfig).create(readGraph)
+> readGraph.compute(SparkGraphComputer).workers(2).program(blvp).submit().get()
+```
+> **注:** 上述涉及到一些目录配置,不清楚的可以先阅读 **[服务搭建篇](./2021-03-02-JanusGraph使用心得-服务搭建篇.md)**
 
 ---
 > [JanusGraph官网](https://docs.janusgraph.org/) | [TinkerPop Documentation](https://tinkerpop.apache.org/docs/3.4.6/reference/#order-step) | [Gremlin Practical doc](https://kelvinlawrence.net/book/Gremlin-Graph-Guide.html#exedge)
