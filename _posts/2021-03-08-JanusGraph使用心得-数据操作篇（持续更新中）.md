@@ -1,15 +1,22 @@
 ---
-layout:     post title:      JanusGraph使用心得-数据操作 (持续更新中)
+layout:     post
+title:      JanusGraph使用心得-数据操作 (持续更新中)
 subtitle:   
-date:       2021-03-08 author:     假正经 header-img: img/banner_janusgraph.png catalog: true tags:
-- JanusGraph - Gremlin - Apache Groovy Programming Language
+date:       2021-03-08
+author:     假正经
+header-img: img/banner_janusgraph.png
+catalog: true
+tags:
+    - JanusGraph
+    - Gremlin
+    - Apache Groovy Programming Language
 ---
 
-本篇主要梳理了目前对数据进行数据读写操作使用的方法,也曾多次浏览JanusGraph相关网站文档,基于目前公司业务对JanusGraph的使用情况，暂不需要考虑数据读写性能的问题 并且本篇涉及到Graph Traveral
-Step较少,后续也会陆续更新
+本篇主要梳理了目前对数据进行数据读写操作使用的方法,也曾多次浏览JanusGraph相关网站文档,基于目前公司业务对JanusGraph的使用情况，暂不需要考虑数据读写性能的问题
+并且本篇涉及到Graph Traveral Step较少,后续也会陆续更新
+
 
 # Java connect JanusGraph
-
 ```shell
 方式1:
 import org.janusgraph.core.JanusGraphFactory
@@ -39,11 +46,8 @@ val configuration = new PropertiesConfiguration
     configuration.setProperty("serializer.config.ioRegistries", "org.janusgraph.graphdb.tinkerpop.JanusGraphIoRegistry,org.janusgraph.graphdb.tinkerpop.JanusGraphIoRegistry")
 Cluster.open(configuration)
 ```
-
 ---
-
 # Create Graph Schema **By Groovy**
-
 ```
 def defineGratefulDeadSchema(janusGraph) {
     m = janusGraph.openManagement()
@@ -84,7 +88,6 @@ Gremlin 命令执行schema创建:
 > **注意:** 属性<**bulkLoader.vertex.id**>必须创建,不然在导入新Vertex时会报错
 
 ---
-
 ## JanusGraph Vertex
 
 ```shell
@@ -101,7 +104,6 @@ iiii.删除节点
 > **注意:** 当删除节点时,若未加上iterator()方法,从不会自动遍历遍历的意义上讲，该步骤不是终止 因此，必须进行某种形式的迭代才能真正进行删除，建议参照上面的代码案例进行开发操作
 
 ---
-
 ## JanusGraph Edge
 
 ```shell
@@ -122,9 +124,7 @@ iiii.删除edge
 ```
 
 ---
-
 # Groovy脚本实现Vertex批量导入
-
 ```shell
 i.批量导入生成Vertex
 def parse(line) {
@@ -159,7 +159,6 @@ def parse(line) {
     GraphSON Format:    JSON
     Script Format:      txt文本
 ```
-
 在工作中,为实现图数据快速导入的要求下,利用JanusGraph源生**bulk load**方案也是不错的选择    
 由于Gryo Format的数据无法直观分析,下面主要介绍GraphSON Format 和Script Format
 
@@ -189,5 +188,6 @@ def parse(line) {
 所以在考虑使用GraphSON Format 批量导入数据时,应着重考虑id分配的问题,不过笔者建议不要轻易使用该Format方式,容易出问题
 
 ### Script Format
+
 ---
 > [JanusGraph官网](https://docs.janusgraph.org/) | [TinkerPop Documentation](https://tinkerpop.apache.org/docs/3.4.6/reference/#order-step) | [Gremlin Practical doc](https://kelvinlawrence.net/book/Gremlin-Graph-Guide.html#exedge)
