@@ -90,7 +90,7 @@ JanusGraph 0.3.3    Apache Hbase 1.3.6    ElasticSearch 6.6.0
       storage.buffer-size=20480
 
       #Apache Hbase -> ZK_HOST
-      storage.hostname=172.16.20.25,172.16.20.26,172.16.20.27
+      storage.hostname=xxx.xx.xx.xx,xxx.xx.xx.xx,...
       storage.hbase.table=rads:h_enterprise_graph
       storage.hbase.ext.zookeeper.znode.parent=/hbase-secure
       storage.hbase.region-count=9
@@ -107,7 +107,7 @@ JanusGraph 0.3.3    Apache Hbase 1.3.6    ElasticSearch 6.6.0
       
       #配置混合索引-ElasticSearch
       index.search.backend=elasticsearch
-      index.search.hostname=172.16.20.27
+      index.search.hostname=xxx.xx.xx.xx
       index.search.port=9200
       index.search.elasticsearch.create.ext.number_of_shards=1
       index.search.elasticsearch.create.ext.number_of_replicas=0
@@ -115,7 +115,7 @@ JanusGraph 0.3.3    Apache Hbase 1.3.6    ElasticSearch 6.6.0
       #更多配置信息可以浏览JanusGraph官网
       
   3. 调整服务配置文件conf/gremlin-server/gremlin-server.yaml
-      host: 172.16.20.25
+      host: xxx.xx.xx.xx
       port: 8182
       scriptEvaluationTimeout: 60000
       channelizer: org.apache.tinkerpop.gremlin.server.channel.WebSocketChannelizer
