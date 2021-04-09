@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      JanusGraph使用心得-服务搭建篇
+title:      JanusGraph使用心得-服务搭建
 subtitle:   
 date:       2021-03-02
 author:     假正经
@@ -8,6 +8,8 @@ header-img: img/banner_janusgraph.png
 catalog: true
 tags:
     - JanusGraph
+    - Apache Hbase
+    - ElasticSearch
 ---
 
 # JanusGraph使用心得-服务搭建篇
