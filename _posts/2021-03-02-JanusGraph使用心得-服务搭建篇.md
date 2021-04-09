@@ -91,8 +91,9 @@ JanusGraph 0.3.3    Apache Hbase 1.3.6    ElasticSearch 6.6.0
 
       #Apache Hbase -> ZK_HOST
       storage.hostname=xxx.xx.xx.xx,xxx.xx.xx.xx,...
-      storage.hbase.table=rads:h_enterprise_graph
+      storage.hbase.table=xx:xxxx
       storage.hbase.ext.zookeeper.znode.parent=/hbase-secure
+      #JanusGraph MIN_REGION_COUNT is 3
       storage.hbase.region-count=9
       storage.hbase.ext.hbase.rpc.timeout = 300000
       storage.hbase.ext.hbase.client.operation.timeout = 300000
