@@ -15,35 +15,31 @@ tags:
 ### 目录&配置简述
 
 - bin
-
+  ```
+  gremlin-server.sh
+  gremlin.sh
+  janusgraph.sh
+  ```
 - conf
+  ```
   janusgraph-berkeleyje-es.properties   
-  ...   
   janusgraph-cassandra.properties   
-  ...   
   janusgraph-cql.properties   
-  ...   
   janusgraph-hbase-es.properties    
-  janusgraph-hbase.properties   
-  janusgraph-hbase-solr.properties    
-  log4j-console.properties    
-  logback.xml   
-  remote-graph.properties   
-  remote-objects.yaml   
-  remote.yaml  
-  
+  janusgraph-hbase.properties
+  ...   
+  ```
   - gremlin-server    
+    ```
     gremlin-server-berkeleyje-es.yaml   
     gremlin-server-berkeleyje.yaml    
     gremlin-server-configuration.yaml   
     gremlin-server.yaml   
-    janusgraph-berkeleyje-es-server.properties    
-    janusgraph-berkeleyje-server.properties   
-    janusgraph-cassandra-es-server.properties   
-    janusgraph-cql-es-server.properties   
-    log4j-server.properties
+    ...
+    ```
   - cassandra
   - hadoop-graph
+    ```
     实现JanusGraph支持的Import/Output Format批量操作的配置  
     hadoop-graphson.properties    
     hadoop-gryo.properties    
@@ -53,19 +49,20 @@ tags:
     read-cassandra.properties   
     read-hbase.properties   
     read-hbase-snapshot.properties
+    ```
   - solr
 - data
-  <font size=2>包含groovy脚本文件,以及支持数据批量装载的文件类型(kryo,json,txt,xml等)</font>  
+  <font size=2 color="#FF6651">包含groovy脚本文件,以及支持数据批量装载的文件类型(kryo,json,txt,xml等)</font>  
 - elasticsearch
-  <font size=2>自带兼容版本的ES服务包,JanusGraph各版本之间对ES,Hbase等兼容并不一致,在选择图后端存储/图索引存储时，应注意版本是否兼容</font>
+  <font size=2 color="#FF6651">自带兼容版本的ES服务包,JanusGraph各版本之间对ES,Hbase等兼容并不一致,在选择图后端存储/图索引存储时，应注意版本是否兼容</font>
 - examples
 - ext
 - javadocs
-  <font size=2>涉及JanusGraph相关类,接口等</font>
+  <font size=2 color="#FF6651">涉及JanusGraph相关类,接口等</font>
 - lib
-  <font size=2>依赖jar包存放路径</font>
+  <font size=2 color="#FF6651">依赖jar包存放路径</font>
 - run
-  <font size=2>服务运行时，默认会产生pid文件并将其保存在pid目录中，也可对shell执行文件进行修改，更新pid文件存在路径</font>
+  <font size=2 color="#FF6651">服务运行时，默认会产生pid文件并将其保存在pid目录中，也可对shell执行文件进行修改，更新pid文件存在路径</font>
 - scripts
 
 ---
