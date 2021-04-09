@@ -40,10 +40,10 @@ tags:
 - 索引创建后，状态异常，未生效  
   ![graph index life cycle](/img/graph_inde_life_cycle.png)
   ```
-    INSTALLED：索引已安装在系统中，但尚未在集群中的所有实例中注册
-    REGISTERED：索引已在集群中的所有实例中注册，但尚未启用
-    ENABLED：索引已启用并正在使用
-    DISABLED：索引已禁用，不再使用
+  INSTALLED：索引已安装在系统中，但尚未在集群中的所有实例中注册
+  REGISTERED：索引已在集群中的所有实例中注册，但尚未启用
+  ENABLED：索引已启用并正在使用
+  DISABLED：索引已禁用，不再使用
   ```
 
 - 服务配置中，未更新ES的相关配置，导致服务启动后按默认副本数及分片数创建索引    
