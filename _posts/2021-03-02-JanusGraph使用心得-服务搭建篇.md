@@ -12,7 +12,7 @@ tags:
     - ElasticSearch
 ---
 
-# JanusGraph使用心得-服务搭建篇
+# JanusGraph 服务搭建
 
 ### 目录&配置简述
 
