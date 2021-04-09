@@ -243,7 +243,7 @@ def parse(line) {
 > blvp = BulkLoaderVertexProgram.build().writeGraph(outputGraphConfig).create(readGraph)
 > readGraph.compute(SparkGraphComputer).workers(2).program(blvp).submit().get()
 ```
-> **注:** 上述涉及到一些目录配置,不清楚的可以先阅读 **[服务搭建篇](./2021-03-02-JanusGraph使用心得-服务搭建篇.md)**   
+> **注:** 上述涉及到一些目录&配置,不清楚的可以先阅读 **[服务搭建篇](./2021-03-02-JanusGraph使用心得-服务搭建篇.md)**   
 
 ---
 
