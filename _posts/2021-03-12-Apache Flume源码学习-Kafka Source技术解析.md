@@ -1,9 +1,14 @@
 ---
-layout:     post title:      Apache Flume源码学习 subtitle:   Kafka Source技术解析 date:       2021-03-12 author:     假正经
-header-img: img/avatar-ny.jpg catalog: true tags:
-
-- Apache Flume - Apache Kafka
-
+layout:     post 
+title:      Apache Flume源码学习 
+subtitle:   Kafka Source技术解析 
+date:       2021-03-12 
+author:     假正经
+header-img: img/avatar-ny.jpg 
+catalog: true 
+tags:
+    - Apache Flume 
+    - Apache Kafka
 ---
 
 本篇主要摘取部分Flume源码进行分析学习,代码略微多一些,建议耐心查看
