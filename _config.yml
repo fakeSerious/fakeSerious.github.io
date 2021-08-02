@@ -69,7 +69,7 @@ ga_domain: auto                          # 自定义的域名，默认的是 aut
 
 # Sidebar settings
 sidebar: true                           # 是否使用侧边栏
-sidebar-about-description: "You make my heart smile<br>学技术,应当自上而下<br>先窥其全貌,再探其细节<br><br>生活,应当丰富经历,享受快乐!<br>不较真,少烦恼,让生活过的简单而充实!"
+sidebar-about-description: "You make my heart smile<br>学技术,应当自上而下<br>先窥其全貌,再探其细节<br><br>生活,应当丰富经历,享受快乐!<br>不较真,少烦恼<br>让生活过的简单而充实!"
 sidebar-avatar: /img/join_me.png      # 侧边栏头像图片
 
 
