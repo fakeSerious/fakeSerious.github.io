@@ -63,7 +63,7 @@ jQuery(document).ready(function ($) {
       "left": x,
       "position": "absolute",
       "font-weight": "bold",
-      "color": "#ff6651"
+      "color": "#3661f8"
     });
     $("body").append($i);
     $i.animate({"top": y - 180, "opacity": 0}, 1500, function () {
